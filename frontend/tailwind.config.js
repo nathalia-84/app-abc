@@ -2,6 +2,7 @@
 export default {
   content: [
     "./index.html",
+    "./login.html",
     "./src/**/*.tsx",
   ],
   theme: {
