@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AddImage from './ImageUploadButton.tsx'
 
 interface WordItem {
   id: number;
@@ -25,12 +26,17 @@ const WordItem: React.FC = () => {
     }
   };
 
+  const handleAddImage = () => {
+    // Lógica para adicionar imagem
+  };
+  
   const handleRemoveWord = (wordToRemove: string) => {
     setWordList(prevList => prevList.filter(item => item.word !== wordToRemove));
   };
 
   return (
     <div className='mt-4 mr-4 ml-4 mb-4'>
+      <h4 className="mt-6 mb-2 text-3x1 font-semibold text-gray-400">INSERIR AS PALAVRAS</h4>
       <input
         className='mr-2 border-black'
         type="text"
@@ -38,6 +44,7 @@ const WordItem: React.FC = () => {
         onChange={handleInputChange}
         placeholder="Digite uma palavra"
       />
+      <AddImage />      
       <button onClick={handleInsertWord} className='mb-4 py-1 px-2 inline-block leading-none text-white bg-purple-700 hover:bg-purple-700 font-semibold rounded shadow'>Inserir</button>
       <div className='bg-gray-200 word-list flex space-x-2 w-1/2 flex-wrap'>
         {wordList.map(item => (
@@ -51,4 +58,4 @@ const WordItem: React.FC = () => {
   );
 };
 
-export default WordItem;
+export default WordItem
