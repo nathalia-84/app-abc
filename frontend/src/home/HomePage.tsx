@@ -1,5 +1,6 @@
 import Navbar from './Navbar.js'
 import MainContent from './MainContent.js'
+import Footer from './Footer.js'
 
 
 function HomePage() {
@@ -11,9 +12,7 @@ function HomePage() {
       <main className="App-main">
         <MainContent />
       </main>
-      <footer>
-
-      </footer>
+      <Footer/>
     </div>
   )
 }
