@@ -1,4 +1,4 @@
-function Login() {
+function LoginPage() {
     return (
       <div className="min-h-screen bg-white flex">
       <div className="hidden lg:block relative w-0 flex-1 bg-gray-900"> 
@@ -37,5 +37,5 @@ function Login() {
     )
   }
   
-  export default Login
+  export default LoginPage
   
