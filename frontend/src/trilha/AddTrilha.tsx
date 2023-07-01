@@ -2,7 +2,7 @@
 import React from 'react';
 import ImageGallery from './ImageGallery';
 
-const App: React.FC = () => {
+const AddTrilha: React.FC = () => {
   const images = [
     'https://i.pinimg.com/originals/d2/7b/9c/d27b9cfe0a2e4897b7e41ed6ff12ae9a.jpg',
     'https://i.pinimg.com/550x/9f/a7/14/9fa7145da9905dbaaa5380244f37544a.jpg',
@@ -23,4 +23,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default AddTrilha;
