@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 function Navbar() {
     return (
       <nav className="flex items-center justify-between px-8 text-white bg-indigo-700 h-20">
-        <div className="logo ml-4 text-xl font-bold">ABC.edu</div>
+        <div className="flex logo ml-4 text-xl font-bold items-center">
+          <img className="w-12" src="src/home/logo.png" alt="logo" />
+          FreirEduc
+        </div>
         <ul className="flex space-x-4 text-white">
           <li><Link to="/about" className="hover:underline">Sobre</Link></li>
           <li><Link to="/guide" className="hover:underline">Trilha de Formação</Link></li>
