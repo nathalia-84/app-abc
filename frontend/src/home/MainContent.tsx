@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function MainContent() {
     return (
       <div>
@@ -6,9 +8,9 @@ function MainContent() {
             <h1 className="text-4xl font-bold mb-4">
               Aprendendo a ler, escrever e transformar o mundo
             </h1>
-            <button className="px-4 py-2 bg-yellow-400 text-black text-base rounded-lg font-medium">
+            <Link to='/pin' className="px-4 py-2 bg-yellow-400 text-black text-base rounded-lg font-medium">
               ACESSAR SALA VIRTUAL COM PIN
-            </button>
+            </Link>
           </div>
           <img
             className="w-1/3 object-contain m-10 rounded-lg"
