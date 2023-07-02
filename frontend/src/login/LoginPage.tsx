@@ -13,9 +13,9 @@ function LoginPage() {
       <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24 object-fill">
         <div className="mx-auto w-full max-w-sm">
           <div>
-            <h2 className="mt-6 text-3xl font-semibold text-pink-700">Entrar</h2>
+            <h2 className="mt-6 text-3xl font-semibold text-purple-700">Entrar</h2>
             <p className="mt-2 text-sm text-gray-600 max-w">
-              Novo por aqui? <a href="#" className="font-medium text-pink-700">Cadastre-se</a>
+              Novo por aqui? <a href="#" className="font-medium text-purple-700">Cadastre-se</a>
             </p>
           </div>
           <div className="mt-6">
@@ -36,7 +36,7 @@ function LoginPage() {
               </div>
               <div className="mb-4">
                 <button
-                  className="inline-block w-full py-4 px-8 leading-none text-white bg-pink-700 hover:bg-pink-700 font-semibold rounded shadow"
+                  className="inline-block w-full py-4 px-8 leading-none text-white bg-indigo-700 hover:bg-purple-700 font-semibold rounded shadow"
                 >
                   Entrar
                 </button>
