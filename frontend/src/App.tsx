@@ -9,6 +9,7 @@ import GuidePage from './guide/GuidePage';
 import AddTrilha from './trilha/AddTrilha';
 import PinPage from './pin/PinPage';
 import MuralPage from './mural/Dashboard';
+import ActivityPage from './activity/ActivityPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/trilha" element={<AddTrilha />} />
         <Route path="/pin" element={<PinPage />} />
         <Route path="/mural" element={<MuralPage />} />
+        <Route path="/activity" element={<ActivityPage />} />
       </Routes>
     </Router>
   );

@@ -12,7 +12,7 @@ function MainContent() {
             O FreirEduc é um software educacional inovador que utiliza o método de Paulo Freire de alfabetização contextualizada potencializando o processo de ensino e aprendizagem. Projetado com um design simples e intuitivo, o software busca adaptar-se à realidade do aluno, celebrando a pluralidade cultural e especificidades das regiões brasileiras.
           </p>
           <Link
-            to="/pin"
+            to="/activity"
             className="mt-4 px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-black text-lg rounded-lg font-medium"
           >
             ACESSAR SALA VIRTUAL COM PIN
