@@ -2469,7 +2469,6 @@ react-router@6.14.1:
     "@remix-run/router" "1.7.1"
 
 react@*, react@^18.0.0, react@^18.2.0, react@>=16.8:
-
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
