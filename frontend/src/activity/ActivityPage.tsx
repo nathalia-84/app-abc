@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { FaClock } from 'react-icons/fa';
+import { FaClock, FaArrowRight  } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ActivityPage: React.FC = () => {
   const [seconds, setSeconds] = useState(300); // 5 minutos em segundos
@@ -58,17 +59,26 @@ const ActivityPage: React.FC = () => {
       </div>
       <div className="fixed flex justify-center items-center w-screen h-screen mt-10">
         {letters.map((letter, index) => (
-          <input
-            key={index}
-            className={`w-10 h-10 border rounded mx-2 text-center ${
-              letter.toLowerCase() === correctLetters[index] ? 'bg-green-500' : 'bg-red-500'
-            }`}
-            maxLength={1}
-            value={letter}
-            onChange={(e) => handleInputChange(index, e.target.value)}
-          />
+        <input
+        key={index}
+        className={`w-20 h-20 border rounded mx-2 text-center ${
+          letter === '' ? 'bg-indigo-700' : letter.toLowerCase() === correctLetters[index] ? 'bg-green-700' : 'bg-red-700'
+        } text-4xl font-sans font-medium text-white`}
+        maxLength={1}
+        value={letter}
+        onChange={(e) => handleInputChange(index, e.target.value)}
+      />
+
         ))}
       </div>
+      <Link className="fixed bottom-16 left-1/2 transform -translate-x-1/" to="/finish">
+        <button
+          className="bg-indigo-700 hover:bg-indigo-800 rounded-full p-2 text-white"
+          
+        >
+          <FaArrowRight className="w-6 h-6" />
+        </button>
+      </Link>
     </div>
   );
 };
