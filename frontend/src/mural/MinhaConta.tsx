@@ -1,7 +1,14 @@
+import AddTrilha from "../trilha/AddTrilha";
+import WordItem from "../trilha/WordItem";
+
 function Trilha() {
     return (
 
-    <div className=" text-black mt-20">s</div>
+    <div className=" text-black flex-grow">
+        <WordItem/>
+        <AddTrilha/>
+        
+    </div>
       );
   }
 

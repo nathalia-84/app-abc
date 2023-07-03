@@ -44,7 +44,7 @@ const Dashboard: React.FC = () => {
       <Navbar />
 
       {/* Conteúdo da Página */}
-      <div className="flex-grow bg-white border border-gray-300 ">
+      <div className="flex-grow mt-40 mr-10 mb-20 ml-10 ">
         {renderContent()}
       </div>
     </div>
