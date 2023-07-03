@@ -35,7 +35,7 @@ const Dashboard: React.FC = () => {
           <button
             onClick={() => setCurrentPage('mural')}
             className={`my-2 mb-5 text-left rounded ${
-              currentPage === 'mural' ? 'text-purple-700 bg-gray-200 font-semibold' : ''
+              currentPage === 'mural' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
             }`}
           >
             Mural
@@ -43,7 +43,7 @@ const Dashboard: React.FC = () => {
           <button
             onClick={() => setCurrentPage('trilha')}
             className={`my-2 mb-5 text-left rounded ${
-              currentPage === 'trilha' ? 'text-purple-700 bg-gray-200 font-semibold' : ''
+              currentPage === 'trilha' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
             }`}
           >
             Trilha
@@ -51,7 +51,7 @@ const Dashboard: React.FC = () => {
           <button
             onClick={() => setCurrentPage('atividades')}
             className={`my-2 mb-5 rounded text-left ${
-              currentPage === 'atividades' ? 'text-purple-700 bg-gray-200 font-semibold' : ''
+              currentPage === 'atividades' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
             }`}
           >
             Atividades
@@ -59,7 +59,7 @@ const Dashboard: React.FC = () => {
           <button
             onClick={() => setCurrentPage('configuracoes')}
             className={`my-2 mb-5 text-left rounded ${
-              currentPage === 'configuracoes' ? 'text-purple-700 bg-gray-200 font-semibold' : ''
+              currentPage === 'configuracoes' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
             }`}
           >
             Configurações
@@ -67,7 +67,7 @@ const Dashboard: React.FC = () => {
           <button
             onClick={() => setCurrentPage('minhaConta')}
             className={`my-2 mb-5 text-left rounded ${
-              currentPage === 'minhaConta' ? 'text-purple-700 bg-gray-200 font-semibold' : ''
+              currentPage === 'minhaConta' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
             }`}
           >
             Minha Conta
@@ -79,7 +79,7 @@ const Dashboard: React.FC = () => {
       <Navbar />
 
       {/* Conteúdo da Página */}
-      <div className="flex-grow mt-40 mr-10 mb-20 ml-10">
+      <div className="flex-grow mt-40 mr-10 mb-10 ml-10">
         {renderContent()}
       </div>
     </div>

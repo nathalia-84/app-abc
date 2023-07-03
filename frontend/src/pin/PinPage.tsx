@@ -1,20 +1,27 @@
 import { FaTools } from 'react-icons/fa';
+import Navbar from '../home/Navbar';
 
 function PinPage() {
-    return (
-      <div className="min-h-screen bg-indigo-700 flex items-center justify-center">
-      <div className="text-center">
-        <div className="text-white text-4xl mb-4">
-          <FaTools className="inline-block text-white text-6xl mb-4" />
+  return (
+    <div>
+       <Navbar />
+    
+    <div className="min-h-screen bg-indigo-700 flex items-center justify-center">
+      <div
+        className="bg-cover bg-center w-screen h-screen"
+        style={{
+          backgroundImage: "url('./src/login/ABC.png')",
+        }}
+      >
+        <div className="flex items-center justify-center h-screen">
+          <div className="bg-indigo-700 h-40 w-40 flex items-center justify-center">
+            {/* Conteúdo da div */}
+          </div>
         </div>
-        <h1 className="text-white text-4xl font-bold mb-4">Em Construção</h1>
-        <p className="text-white text-xl">
-          Desculpe-nos pela bagunça! Estamos trabalhando duro para melhorar o
-          FreirEduc.
-        </p>
+      </div>
       </div>
     </div>
-    );
-  }
-  
+  );
+}
+
 export default PinPage;

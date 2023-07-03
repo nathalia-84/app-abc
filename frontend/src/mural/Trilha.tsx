@@ -110,14 +110,14 @@ function Trilha() {
         <div className="mt-20 ml-4 mr-4 mb-10 flex">
           
           <select
-             className="flex items-center px-3 py-2 space-x-2 text-white bg-purple-700 border border-gray-200 rounded-md focus:outline-none"
+             className="flex items-center px-3 py-2 space-x-2 text-white bg-indigo-700 border border-gray-200 rounded-md focus:outline-none"
             onChange={toggleCalendar}
             >
            <option value="iniciar-agora">Iniciar Agora</option>
             <option value="agendar">Agendar</option>
            </select>
            <button
-              className="flex px-3 py-2 leading-none space-x-2 text-white bg-purple-700 border border-gray-200font-semibold rounded-md shadow"
+              className="flex px-3 py-2 leading-none space-x-2 text-white bg-indigo-700 border border-gray-200font-semibold rounded-md shadow"
             >
               Salvar
            </button>
