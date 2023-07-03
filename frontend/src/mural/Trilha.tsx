@@ -118,31 +118,18 @@ function Trilha() {
             )}
           </div>
         </div>
-        <div className="mt-2 mr-4 ml-4 mb-4">
-        {selectedModalidade === 'palavras' && (
-          <div className="flex items-center justify-end">
-            <select
-              className="flex items-center px-3 py-2 space-x-2 text-gray-700 bg-gray-100 border border-gray-200 rounded-md focus:outline-none"
-              onChange={(event) => {
-                if (event.target.value === 'agendar') {
-                  setIsCalendarVisible(true);
-                } else {
-                  setIsCalendarVisible(false);
-                }
-              }}
-            >
-        <option value="iniciar-agora">Iniciar Agora</option>
-        <option value="agendar">Agendar</option>
-      </select>
-    </div>
-  )}
-</div>
-<div className="mt-2 mr-4 ml-4 mb-4">
-  {selectedModalidade === 'palavras' && isCalendarVisible && (
-    <div className="mt-2 p-2 bg-white border border-gray-200 rounded-md shadow-md">
-      <Calendar /> {/* Renderize o componente de calendário aqui */}
-    </div>
-  )}
+
+
+      <div className="mt-2 mr-4 ml-4 mb-4">
+  <div className="flex items-center justify-end">
+    <select
+      className="flex items-center px-3 py-2 space-x-2 text-gray-700 bg-gray-100 border border-gray-200 rounded-md focus:outline-none"
+      onChange={toggleCalendar}
+    >
+      <option value="iniciar-agora">Iniciar Agora</option>
+      <option value="agendar">Agendar</option>
+    </select>
+  </div>
 </div>
 
       </div>
