@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import AddTrilha from '../trilha/AddTrilha';
 import WordItem from '../trilha/WordItem';
-import { BiChevronUp, BiChevronDown, BiCalendar } from 'react-icons/bi';
-import { Calendar } from 'react-big-calendar';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
+import { BiChevronUp, BiChevronDown } from 'react-icons/bi';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 function Trilha() {
   const [isOpenTipo, setIsOpenTipo] = useState(false);
@@ -20,11 +20,11 @@ function Trilha() {
     setIsOpenModalidade(!isOpenModalidade);
   };
 
-  const handleTipoChange = (event) => {
+  const handleTipoChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setSelectedTipo(event.target.value);
   };
 
-  const handleModalidadeChange = (event) => {
+  const handleModalidadeChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setSelectedModalidade(event.target.value);
   };
 
@@ -118,38 +118,36 @@ function Trilha() {
             )}
           </div>
         </div>
+        <div className="mt-2 mr-4 ml-4 mb-4">
+  {selectedModalidade === 'palavras' && (
+    <div className="flex items-center justify-end">
+      <select
+        className="flex items-center px-3 py-2 space-x-2 text-gray-700 bg-gray-100 border border-gray-200 rounded-md focus:outline-none"
+        onChange={(event) => {
+          if (event.target.value === 'agendar') {
+            setIsCalendarVisible(true);
+          } else {
+            setIsCalendarVisible(false);
+          }
+        }}
+      >
+        <option value="iniciar-agora">Iniciar Agora</option>
+        <option value="agendar">Agendar</option>
+      </select>
+    </div>
+  )}
+</div>
+<div className="mt-2 mr-4 ml-4 mb-4">
+  {selectedModalidade === 'palavras' && isCalendarVisible && (
+    <div className="mt-2 p-2 bg-white border border-gray-200 rounded-md shadow-md">
+      <Calendar /> {/* Renderize o componente de calendário aqui */}
+    </div>
+  )}
+</div>
 
-        <div className="mt-2 mr-4 ml-4 mb-4">
-          {selectedModalidade === 'palavras' && (
-            <div className="flex items-center justify-end">
-              <button className="flex items-center px-3 py-2 space-x-2 text-gray-700 bg-gray-100 border border-gray-200 rounded-md focus:outline-none">
-                <BiCalendar className="w-5 h-5" />
-                <span>Agendar</span>
-              </button>
-            </div>
-          )}
-        </div>
-        <div className="mt-2 mr-4 ml-4 mb-4">
-          {selectedModalidade === 'palavras' && (
-            <div className="flex items-center">
-              <button
-                className="flex items-center px-3 py-2 space-x-2 text-gray-700 bg-gray-100 border border-gray-200 rounded-md focus:outline-none"
-                onClick={toggleCalendar}
-              >
-                <BiCalendar className="w-5 h-5" />
-                <span>Iniciar Agora</span>
-              </button>
-            </div>
-          )}
-          {isCalendarVisible && (
-            <div className="mt-2 p-2 bg-white border border-gray-200 rounded-md shadow-md">
-              <Calendar /> {/* Renderize o componente de calendário aqui */}
-            </div>
-          )}
-        </div>
       </div>
     </div>
   );
 }
 
-export default Trilha;
+export default Trilha
