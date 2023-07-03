@@ -9,6 +9,9 @@ import GuidePage from './guide/GuidePage';
 import AddTrilha from './trilha/AddTrilha';
 import PinPage from './pin/PinPage';
 import MuralPage from './mural/Dashboard';
+import ActivityPage from './activity/ActivityPage';
+import FinishPage from './activity/FinishPage';
+import NoTimePage from './activity/NoTimePage';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
         <Route path="/trilha" element={<AddTrilha />} />
         <Route path="/pin" element={<PinPage />} />
         <Route path="/mural" element={<MuralPage />} />
+        <Route path="/activity" element={<ActivityPage />} />
+        <Route path="/finish" element={<FinishPage />} />
+        <Route path="/timeisup" element={<NoTimePage />} />
       </Routes>
     </Router>
   );
