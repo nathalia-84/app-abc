@@ -69,58 +69,45 @@ function Trilha() {
         <div className="mt-2 mr-4 ml-4 mb-4">
           <h4 className=" text-3x1 font-semibold text-gray-400">ESCOLHA O TIPO DA TRILHA</h4>
           <div className="relative flex items-center">
-            <div
-              className="flex items-center justify-between appearance-none block w-2/3 py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded-md focus:outline-none"
-              onClick={toggleSelectTipo}
-            >
-              {selectedTipo}
-              <span className="ml-2">{isOpenTipo ? <BiChevronUp /> : <BiChevronDown />}</span>
-            </div>
-            {isOpenTipo && (
-              <div className="absolute top-10 left-0 w-2/3 bg-white border border-gray-200 rounded-md shadow-md">
+           
+            
+              <div className="absolute top-2 left-0 w-2/3 bg-white border border-gray-200 rounded-md shadow-md">
                 <select
                   className="w-full p-2 border-none rounded-md focus:outline-none"
                   value={selectedTipo}
                   onChange={handleTipoChange}
                 >
                   <option value="palavras">Palavras</option>
-                  <option value="outra-opcao">Outra Opção</option>
-                  <option value="mais-uma-opcao">Mais uma Opção</option>
+                  <option value="outra-opcao">Letras</option>
+                  <option value="mais-uma-opcao">Frases</option>
                 </select>
               </div>
-            )}
+            
           </div>
         </div>
         <div className="mt-2 mr-4 ml-4 mb-4">
           <h4 className=" text-3x1 font-semibold text-gray-400">ESCOLHA A MODALIDADE</h4>
           <div className="relative flex items-center">
-            <div
-              className="flex items-center justify-between appearance-none block w-2/3 py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded-md focus:outline-none"
-              onClick={toggleSelectModalidade}
-            >
-              {selectedModalidade}
-              <span className="ml-2">
-                {isOpenModalidade ? <BiChevronUp /> : <BiChevronDown />}
-              </span>
-            </div>
-            {isOpenModalidade && (
-              <div className="absolute top-10 left-0 w-2/3 bg-white border border-gray-200 rounded-md shadow-md">
+            
+            
+              <div className="absolute top-2 left-0 w-2/3 bg-white border border-gray-200 rounded-md shadow-md">
                 <select
                   className="w-full p-2 border-none rounded-md focus:outline-none"
-                  value={selectedModalidade}
+                  value="Customizado pelo professor"
                   onChange={handleModalidadeChange}
                 >
-                  <option value="palavras">Palavras</option>
-                  <option value="outra-opcao">Outra Opção</option>
+                  <option value="palavras">Customizado pelo professor</option>
+                  <option value="outra-opcao">Gerado aleatoriamente</option>
                   <option value="mais-uma-opcao">Mais uma Opção</option>
                 </select>
               </div>
-            )}
+           
           </div>
         </div>
 
 
-        <div className="mt-2 ml-4 mr-4 mb-10 flex">
+       
+        <div className="mt-20 ml-4 mr-4 mb-10 flex">
           
           <select
              className="flex items-center px-3 py-2 space-x-2 text-white bg-purple-700 border border-gray-200 rounded-md focus:outline-none"
