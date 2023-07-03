@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function LoginPage() {
   return (
     <div className="min-h-screen bg-white flex">
@@ -38,7 +40,7 @@ function LoginPage() {
                 <button
                   className="inline-block w-full py-4 px-8 leading-none text-white bg-indigo-700 hover:bg-purple-700 font-semibold rounded shadow"
                 >
-                  Entrar
+                 <Link to={"/mural"}>Entrar</Link>
                 </button>
               </div>
               <div className="mb-4">
