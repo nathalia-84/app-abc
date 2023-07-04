@@ -5,6 +5,7 @@ import Trilha from './Trilha';
 import Atividades from './Atividades';
 import Configuracoes from './Configuracoes';
 import MinhaConta from './MinhaConta';
+import TutorialProfessor from './Tutorial';
 
 const Dashboard: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('mural'); // Página inicial: Mural
@@ -21,6 +22,8 @@ const Dashboard: React.FC = () => {
         return <Configuracoes />;
       case 'minhaConta':
         return <MinhaConta />;
+      case 'tutorialProfessor':
+        return  <TutorialProfessor /> ;
       default:
         return null;
     }
@@ -29,9 +32,9 @@ const Dashboard: React.FC = () => {
   return (
     <div className="flex h-screen">
       {/* Menu Lateral */}
-      <div className="w-1/6 bg-white text-gray-800 border border-gray-200">
+      <div className="w-1/6 bg-white text-gray-800 border border-gray-200 overflow-x-auto">
         {/* Conteúdo do Menu */}
-        <div className="flex flex-col text-xl p-4 mt-20 px-5 py-10 text-gray-500 text-left">
+        <div className="flex flex-col text-xl p-4 mt-20 px-5 py-10 text-gray-500 text-left overflow-y-auto">
           <button
             onClick={() => setCurrentPage('mural')}
             className={`my-2 mb-5 text-left rounded ${
@@ -55,6 +58,14 @@ const Dashboard: React.FC = () => {
             }`}
           >
             Atividades
+          </button>
+          <button
+            onClick={() => setCurrentPage('tutorialProfessor')}
+            className={`my-2 mb-5 rounded text-left ${
+              currentPage === 'tutorialProfessor' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
+            }`}
+          >
+            Tutorial Professor
           </button>
           <button
             onClick={() => setCurrentPage('configuracoes')}

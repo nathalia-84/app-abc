@@ -1,12 +1,13 @@
 import { FiSearch, FiBell } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     return (
       <div className="w-full items-center justify-between shadow fixed top-0 z-10">
         <nav className="flex items-center justify-between px-8 text-white bg-indigo-700 h-20">
           <div className="flex logo ml-4 text-xl font-bold items-center">
-            <img className="w-12" src="src/home/logo.png" alt="logo" />
-            FreirEduc
+         <img className="w-12" src="src/home/logo.png" alt="logo" />
+         <Link to="/home"> FreirEduc </Link> 
           </div>
 
 
@@ -28,7 +29,12 @@ function Navbar() {
                   <FiSearch />
                 </button>
               </div>
+              <div>
+            <ul className="flex space-x-4 text-white mr-4 ml-4">
+              <li><Link to="/home" className="hover:underline">Sair</Link></li>              
+           </ul>
           </div>
+          </div>        
         </nav>
        
       </div>

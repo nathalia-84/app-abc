@@ -9,7 +9,7 @@ function Mural() {
         </h4>
         <div className="bg-indigo-700 h-40 rounded-[30px]"></div>
       </div>
-      <div className="grid grid-flow-row bg-white border text-lg border-gray-300 w-2/3 h-100 rounded-[30px] mt-8 mr-8 ml-20 mb-4 text-left">
+      <div className="grid grid-flow-row bg-white border text-lg border-gray-300 w-1/2 h-100 rounded-[30px] mt-8 mr-8 ml-20 mb-4 text-left">
         <h4 className="text-3x1 font-semibold text-black mt-4 mr-4 ml-6 mb-4 text-left">
           Atividades
         </h4>
@@ -60,7 +60,7 @@ function Mural() {
         </div>
       </div>
       <div></div>
-      <div className="grid grid-flow-row bg-white border text-lg border-gray-300 w-2/3 h-100 rounded-[30px] mt-8 mr-8 ml-20 mb-4">
+      <div className="grid grid-flow-row bg-white border text-lg border-gray-300 w-1/2 h-100 rounded-[30px] mt-8 mr-8 ml-20 mb-4">
         <h4 className="text-3x1 font-semibold text-black mt-4 mr-4 ml-6 mb-4 text-left">
           Trilhas Agendadas
         </h4>
