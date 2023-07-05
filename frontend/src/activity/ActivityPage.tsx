@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { FaClock, FaArrowRight  } from 'react-icons/fa';
-import { useNavigate  } from 'react-router-dom';
+import { FaClock, FaArrowRight } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import CustomAlert from './CustomAlert';
 
+interface CustomWindow extends Window {
+  speechSynthesis: SpeechSynthesis;
+}
 
 const ActivityPage: React.FC = () => {
   const navigate = useNavigate();
@@ -10,6 +13,9 @@ const ActivityPage: React.FC = () => {
   const [letters, setLetters] = useState(['', '', '', '']);
   const correctLetters = ['c', 'a', 's', 'a'];
   const [showAlert, setShowAlert] = useState(false);
+  const [showImage, setShowImage] = useState(true); // Estado para controlar a exibição da imagem
+
+  const { speechSynthesis }: CustomWindow = window;
 
   useEffect(() => {
     if (seconds > 0) {
@@ -23,6 +29,26 @@ const ActivityPage: React.FC = () => {
       navigate('/timeisup');
     }
   }, [seconds, navigate]);
+
+  useEffect(() => {
+    // Após 10 segundos, esconde a imagem
+    const timeout = setTimeout(() => {
+      setShowImage(false);
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    // Função para falar a palavra "casa"
+    const speakWord = () => {
+      const utterance = new SpeechSynthesisUtterance('casa');
+      speechSynthesis.speak(utterance);
+    };
+
+    // Chame a função de falar a palavra "casa" quando o componente for montado
+    speakWord();
+  }, []);
 
   const getProgressWidth = () => {
     const percentage = (seconds / 90) * 100; // Calculate percentage based on 90 seconds
@@ -45,7 +71,7 @@ const ActivityPage: React.FC = () => {
   };
 
   const handleButtonClick = () => {
-    if (checkLetters()==true) {
+    if (checkLetters() === true) {
       // Se todas as respostas estiverem corretas, redireciona para /finish
       navigate('/finish');
     } else {
@@ -61,13 +87,13 @@ const ActivityPage: React.FC = () => {
 
   return (
     <div className="min-h-screen relative">
-      <img
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-75 blur-xs"
-        src="src/activity/bg-farm.jpg"
-        alt="background"
-      />
-      <div className="fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-indigo-700 rounded-lg z-50">
-        <img className="absolute top-1 left-2 w-full h-full object-cover" src="src/activity/house.png" alt="background" />
+      <img className="absolute top-0 left-0 w-full h-full object-cover opacity-75 blur-xs" src="src/activity/bg-farm.jpg" alt="background" />
+      <div className="fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-indigo-700 rounded-lg z-50 justify-center items-center">
+        {showImage ? (
+          <img className="absolute top-1 left-2 w-40 h-40 object-cover justify-center items-center" src="src/activity/falar.png" alt="background" />
+        ) : (
+          <img className="absolute top-1 left-2 w-full h-full object-cover" src="src/activity/house.png" alt="background" />
+        )}
       </div>
       <div className="flex items-center absolute top-0 right-0 text-white text-3xl z-10 mr-4">
         <FaClock className="mt-1 mr-2 w-6" />
@@ -78,16 +104,19 @@ const ActivityPage: React.FC = () => {
       </div>
       <div className="fixed flex justify-center items-center w-screen h-screen mt-10">
         {letters.map((letter, index) => (
-        <input
-        key={index}
-        className={`w-20 h-20 rounded-lg mx-2 text-center ${
-          letter === '' ? 'bg-indigo-700' : letter.toLowerCase() === correctLetters[index] ? 'bg-green-700' : 'bg-red-700'
-        } text-4xl font-mono font-medium uppercase text-white`}
-        maxLength={1}
-        value={letter}
-        onChange={(e) => handleInputChange(index, e.target.value)}
-      />
-
+          <input
+            key={index}
+            className={`w-20 h-20 rounded-lg mx-2 text-center ${
+              letter === ''
+                ? 'bg-indigo-700'
+                : letter.toLowerCase() === correctLetters[index]
+                ? 'bg-green-700'
+                : 'bg-red-700'
+            } text-4xl font-mono font-medium uppercase text-white`}
+            maxLength={1}
+            value={letter}
+            onChange={(e) => handleInputChange(index, e.target.value)}
+          />
         ))}
       </div>
       <div className="fixed bottom-16 left-1/2 transform -translate-x-1/2" onClick={handleButtonClick}>
