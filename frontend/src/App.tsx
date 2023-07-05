@@ -12,6 +12,7 @@ import MuralPage from './mural/Dashboard';
 import ActivityPage from './activity/ActivityPage';
 import FinishPage from './activity/FinishPage';
 import NoTimePage from './activity/NoTimePage';
+import InsertPin from './pin/InsertPin';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/activity" element={<ActivityPage />} />
         <Route path="/finish" element={<FinishPage />} />
         <Route path="/timeisup" element={<NoTimePage />} />
+        <Route path="/insertPin" element={<InsertPin />} />
       </Routes>
     </Router>
   );
