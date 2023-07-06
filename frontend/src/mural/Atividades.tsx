@@ -1,7 +1,6 @@
 function Atividades() {
     return (
-
-    <div className=" text-black mt-20">i</div>
+      <div className=" text-black mt-20">i</div>
       );
   }
 

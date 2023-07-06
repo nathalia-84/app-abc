@@ -7,7 +7,7 @@ function Navbar() {
         <nav className="flex items-center justify-between px-8 text-white bg-indigo-700 h-20">
           <div className="flex logo ml-4 text-xl font-bold items-center">
          <img className="w-12" src="src/home/logo.png" alt="logo" />
-         <Link to="/home"> FreirEduc </Link> 
+         <Link to="/"> FreirEduc </Link> 
           </div>
 
 

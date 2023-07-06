@@ -15,17 +15,18 @@ const Tutorial: React.FC= () => {
     };
     
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <div
-            className=''
-              style={{
-                cursor: 'pointer',
-                backgroundSize: 'cover',
-                width: '600px',
-                height: '345px',
-            }}>
+        <div className='grid grid-row' >
+        <div className="font-semibold  text-black flex-grow">        
+            <h1>TUTORIAL PROFESSOR</h1>
+        </div>
+        <div 
+        style={{  justifyContent: 'center', cursor: 'pointer',
+        backgroundSize: '',
+        width: '800px',
+        height: '500px', alignItems: 'center' }}
+        >
     
-        <iframe width="600" height="345" src="https://www.youtube.com/embed/bodoescOc6Q" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+        <iframe width="700" height="600" src="https://www.youtube.com/embed/bodoescOc6Q" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
         </div>
     </div>
     );

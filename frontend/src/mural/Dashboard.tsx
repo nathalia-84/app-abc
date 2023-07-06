@@ -6,6 +6,7 @@ import Atividades from './Atividades';
 import Configuracoes from './Configuracoes';
 import MinhaConta from './MinhaConta';
 import TutorialProfessor from './Tutorial';
+import Alunos from './Alunos';
 
 const Dashboard: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('mural'); // Página inicial: Mural
@@ -23,7 +24,9 @@ const Dashboard: React.FC = () => {
       case 'minhaConta':
         return <MinhaConta />;
       case 'tutorialProfessor':
-        return  <TutorialProfessor /> ;
+        return <TutorialProfessor /> ;
+      case 'alunos':
+        return <Alunos /> ;
       default:
         return null;
     }
@@ -58,6 +61,14 @@ const Dashboard: React.FC = () => {
             }`}
           >
             Atividades
+          </button>
+          <button
+            onClick={() => setCurrentPage('alunos')}
+            className={`my-2 mb-5 text-left rounded ${
+              currentPage === 'alunos' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
+            }`}
+          >
+            Alunos
           </button>
           <button
             onClick={() => setCurrentPage('tutorialProfessor')}
