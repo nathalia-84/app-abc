@@ -24,7 +24,7 @@ const ImageUploadButton: React.FC = () => {
         style={{ display: 'none' }}
         onChange={handleFileChange}
       />
-      <button onClick={handleButtonClick} className='mr-2 mb-4  inline-block leading-none text-white bg-purple-700 hover:bg-purple-700 font-semibold rounded shadow py-3 px-4 '>
+      <button onClick={handleButtonClick} className='mr-2 mb-4  inline-block leading-none text-white bg-indigo-700 hover:bg-indigo-700 font-semibold rounded shadow py-3 px-4 '>
         + Adicionar Imagem
       </button>
     </>

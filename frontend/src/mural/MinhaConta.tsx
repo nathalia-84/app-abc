@@ -3,14 +3,10 @@ import WordItem from "../trilha/WordItem";
 
 function Trilha() {
     return (
-
-    <div className=" text-black flex-grow">
-        <WordItem/>
-        <AddTrilha/>
-        
+    <div className="font-semibold  text-black flex-grow">        
+        <h1>CONTA</h1>
     </div>
       );
   }
-
 
 export default Trilha;

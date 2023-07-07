@@ -1,11 +1,15 @@
-import { FiSearch, FiBell } from 'react-icons/fi';
 
-function Atividades() {
+
+function Configuracoes() {
     return (
-
-    <div className=" text-black mt-20">t</div>
+      <div className=" text-black mt-20">
+        <h4 className="text-3x2 font-semibold text-black  mb-4 flex-grow">
+        CONFIGURAÇÕES
+        </h4>
+        
+      </div>
       );
   }
 
 
-export default Atividades;
+export default Configuracoes;

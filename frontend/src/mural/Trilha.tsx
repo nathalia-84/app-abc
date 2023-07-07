@@ -50,23 +50,12 @@ function Trilha() {
           <input type="text" />
         </div>
 
-        <div className="mt-4">
-          <WordItem />
-        </div>
-        <div className="mt-2 mr-4 ml-4 mb-4">
-          <h4 className="mb-2 text-3x1 font-semibold text-gray-400">DESCRIÇÃO</h4>
-          <input
-            type="text"
-            placeholder="Ex. Alguma Descrição..."
-            className="appearance-none block w-2/3 py-14 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded-md focus:outline-none"
-          />
-          <input type="text" />
-        </div>
-
         <div className="">
           <AddTrilha />
         </div>
-        <div className="mt-2 mr-4 ml-4 mb-4">
+
+       
+        <div className="mt-2 mr-4 ml-4 mb-8">
           <h4 className=" text-3x1 font-semibold text-gray-400">ESCOLHA O TIPO DA TRILHA</h4>
           <div className="relative flex items-center">
            
@@ -85,39 +74,53 @@ function Trilha() {
             
           </div>
         </div>
-        <div className="mt-2 mr-4 ml-4 mb-4">
+        <div className="mt-2 mr-4 ml-4 mb-8">
           <h4 className=" text-3x1 font-semibold text-gray-400">ESCOLHA A MODALIDADE</h4>
           <div className="relative flex items-center">
-            
+           
             
               <div className="absolute top-2 left-0 w-2/3 bg-white border border-gray-200 rounded-md shadow-md">
                 <select
                   className="w-full p-2 border-none rounded-md focus:outline-none"
-                  value="Customizado pelo professor"
-                  onChange={handleModalidadeChange}
+                  value={selectedTipo}
+                  onChange={handleTipoChange}
                 >
-                  <option value="palavras">Customizado pelo professor</option>
-                  <option value="outra-opcao">Gerado aleatoriamente</option>
-                  <option value="mais-uma-opcao">Mais uma Opção</option>
+                  <option value="customizado">Customizado pelo Professor</option>
+                  <option value="aleatorio">Gerado Aleatoriamente</option>
                 </select>
               </div>
-           
+            
           </div>
         </div>
+        
+        <div className="mt-14 mr-4 ml-4 mb-4">
+          <h4 className="mb-2 text-3x1 font-semibold text-gray-400">DESCRIÇÃO</h4>
+          <input
+            type="text"
+            placeholder="Ex. Alguma Descrição..."
+            className="appearance-none block w-2/3 py-14 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded-md focus:outline-none"
+          />
+          <input type="text" />
+        </div>
+
+        <div className="mt-14">
+          <WordItem />
+        </div>
+        
 
 
        
         <div className="mt-20 ml-4 mr-4 mb-10 flex">
           
           <select
-             className="flex items-center px-3 py-2 space-x-2 text-white bg-purple-700 border border-gray-200 rounded-md focus:outline-none"
+             className="flex items-center px-3 py-2 space-x-2 text-white bg-indigo-700 border border-gray-200 rounded-md focus:outline-none"
             onChange={toggleCalendar}
             >
            <option value="iniciar-agora">Iniciar Agora</option>
             <option value="agendar">Agendar</option>
            </select>
            <button
-              className="flex px-3 py-2 leading-none space-x-2 text-white bg-purple-700 border border-gray-200font-semibold rounded-md shadow"
+              className="flex px-3 py-2 leading-none space-x-2 text-white bg-indigo-700 border border-gray-200font-semibold rounded-md shadow"
             >
               Salvar
            </button>

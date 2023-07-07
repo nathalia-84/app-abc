@@ -5,6 +5,8 @@ import Trilha from './Trilha';
 import Atividades from './Atividades';
 import Configuracoes from './Configuracoes';
 import MinhaConta from './MinhaConta';
+import TutorialProfessor from './Tutorial';
+import Alunos from './Alunos';
 
 const Dashboard: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('mural'); // Página inicial: Mural
@@ -21,6 +23,10 @@ const Dashboard: React.FC = () => {
         return <Configuracoes />;
       case 'minhaConta':
         return <MinhaConta />;
+      case 'tutorialProfessor':
+        return <TutorialProfessor /> ;
+      case 'alunos':
+        return <Alunos /> ;
       default:
         return null;
     }
@@ -29,13 +35,13 @@ const Dashboard: React.FC = () => {
   return (
     <div className="flex h-screen">
       {/* Menu Lateral */}
-      <div className="w-1/6 bg-white text-gray-800 border border-gray-200">
+      <div className="w-1/6 bg-white text-gray-800 border border-gray-200 overflow-x-auto">
         {/* Conteúdo do Menu */}
-        <div className="flex flex-col text-xl p-4 mt-20 px-5 py-10 text-gray-500 text-left">
+        <div className="flex flex-col text-xl p-4 mt-20 px-5 py-10 text-gray-500 text-left overflow-y-auto">
           <button
             onClick={() => setCurrentPage('mural')}
             className={`my-2 mb-5 text-left rounded ${
-              currentPage === 'mural' ? 'text-purple-700 bg-gray-200 font-semibold' : ''
+              currentPage === 'mural' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
             }`}
           >
             Mural
@@ -43,7 +49,7 @@ const Dashboard: React.FC = () => {
           <button
             onClick={() => setCurrentPage('trilha')}
             className={`my-2 mb-5 text-left rounded ${
-              currentPage === 'trilha' ? 'text-purple-700 bg-gray-200 font-semibold' : ''
+              currentPage === 'trilha' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
             }`}
           >
             Trilha
@@ -51,15 +57,31 @@ const Dashboard: React.FC = () => {
           <button
             onClick={() => setCurrentPage('atividades')}
             className={`my-2 mb-5 rounded text-left ${
-              currentPage === 'atividades' ? 'text-purple-700 bg-gray-200 font-semibold' : ''
+              currentPage === 'atividades' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
             }`}
           >
             Atividades
           </button>
           <button
+            onClick={() => setCurrentPage('alunos')}
+            className={`my-2 mb-5 text-left rounded ${
+              currentPage === 'alunos' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
+            }`}
+          >
+            Alunos
+          </button>
+          <button
+            onClick={() => setCurrentPage('tutorialProfessor')}
+            className={`my-2 mb-5 rounded text-left ${
+              currentPage === 'tutorialProfessor' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
+            }`}
+          >
+            Tutorial Professor
+          </button>
+          <button
             onClick={() => setCurrentPage('configuracoes')}
             className={`my-2 mb-5 text-left rounded ${
-              currentPage === 'configuracoes' ? 'text-purple-700 bg-gray-200 font-semibold' : ''
+              currentPage === 'configuracoes' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
             }`}
           >
             Configurações
@@ -67,7 +89,7 @@ const Dashboard: React.FC = () => {
           <button
             onClick={() => setCurrentPage('minhaConta')}
             className={`my-2 mb-5 text-left rounded ${
-              currentPage === 'minhaConta' ? 'text-purple-700 bg-gray-200 font-semibold' : ''
+              currentPage === 'minhaConta' ? 'text-indigo-700 bg-gray-200 font-semibold' : ''
             }`}
           >
             Minha Conta
@@ -79,7 +101,7 @@ const Dashboard: React.FC = () => {
       <Navbar />
 
       {/* Conteúdo da Página */}
-      <div className="flex-grow mt-40 mr-10 mb-20 ml-10">
+      <div className="flex-grow mt-40 mr-10 mb-10 ml-10">
         {renderContent()}
       </div>
     </div>
