@@ -1,32 +1,40 @@
-import { GiSadCrab } from 'react-icons/gi';
+import React from 'react';
+import { FaArrowLeft, FaHome, FaChartBar } from 'react-icons/fa';
 import { BsClockHistory } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
-const NoTimePage = () => {
+const FinishPage: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-indigo-700 text-white">
-      <GiSadCrab className="text-6xl mb-4" />
-      <h2 className="text-3xl font-bold mb-4">Oh não!</h2>
-      <p className="text-xl text-center mb-6">
-        O tempo acabou! Infelizmente, você não conseguiu concluir a atividade a tempo. Mas não se preocupe, você pode
-        tentar novamente!
-      </p>
-      <BsClockHistory className="text-4xl" />
-      <p className="text-xl text-center mt-2">Que tal tentar novamente e ser mais rápido?</p>
-      <div className="flex mt-6">
-        <Link to="/activity" className="mr-4">
-          <button className="bg-white text-indigo-700 py-2 px-4 rounded-lg hover:bg-indigo-100">
-            Tentar Novamente
+    <div className="min-h-screen flex flex-col items-center justify-center bg-indigo-500 text-white">
+      <div className="flex justify-center space-x-4 mb-8 gap-20 ">
+        <Link to="/activity">
+          <button className="bg-yellow-400 text-indigo-900 p-4 rounded-full hover:bg-yellow-300">
+            <FaArrowLeft className="w-8 h-8" />
           </button>
         </Link>
         <Link to="/">
-          <button className="bg-white text-indigo-700 py-2 px-4 rounded-lg hover:bg-indigo-100">
-            Voltar à Página Inicial
+          <button className="bg-green-400 text-indigo-900 p-4 rounded-full hover:bg-green-300">
+            <FaHome className="w-8 h-8" />
+          </button>
+        </Link>
+        <Link to="/results">
+          <button className="bg-red-400 text-indigo-900 p-4 rounded-full hover:bg-red-300">
+            <FaChartBar className="w-8 h-8" />
           </button>
         </Link>
       </div>
+      <div className="mb-6">
+        <BsClockHistory className="text-9xl mt-8 mb-6" />
+      </div>
+      <img
+        className="h-60 mb-8 rounded-lg"
+        src="src/activity/time.gif"
+        alt="Coelho correndo"
+      />
+      
     </div>
   );
 };
 
-export default NoTimePage;
+export default FinishPage;
+
