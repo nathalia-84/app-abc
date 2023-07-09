@@ -54,7 +54,6 @@ const ActivityPage: React.FC = () => {
       setShowSadFace(!isCorrect);
     }
   }, [letters]);
-  
 
   return (
     <div className="min-h-screen relative">
@@ -63,11 +62,20 @@ const ActivityPage: React.FC = () => {
         src="src/activity/bg-farm.jpg"
         alt="background"
       />
-      <div className="fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-indigo-700 rounded-lg z-50">
-  <FaSmile className={`absolute top-1/2 left-2/4 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 text-indigo-700 z-50 shadow-xl ${showHappyFace ? '' : 'hidden'}`} />
-  <FaSadTear className={`absolute top-1/2 left-2/4 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 text-indigo-700 z-50 shadow-xl ${showSadFace ? '' : 'hidden'}`} />
-  <img className="absolute top-1 left-2 w-full h-full object-cover z-0" src="src/activity/house.png" alt="background" />
-</div>
+      <div className="flex items-center fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="w-72 h-72 bg-indigo-700 rounded-lg flex items-center justify-center">
+          <img className="w-72" src="src/activity/house.png" alt="background" />
+          {(showHappyFace || showSadFace) && (
+            <div className="absolute top-2 left-2">
+              {showHappyFace ? (
+                <FaSmile className="h-20 w-20 text-white" />
+              ) : (
+                <FaSadTear className="h-20 w-20 text-red-500" />
+              )}
+            </div>
+          )}
+        </div>
+      </div>
       <div className="flex items-center absolute top-0 right-0 text-white text-3xl z-10 mr-4">
         <FaClock className="mt-1 mr-2 w-6" />
         {Math.floor(seconds / 60).toString().padStart(2, '0')}:{(seconds % 60).toString().padStart(2, '0')}
@@ -75,13 +83,13 @@ const ActivityPage: React.FC = () => {
       <div className="w-full h-10 rounded bg-gray-500 overflow-hidden mb-4 relative" style={{ top: 0 }}>
         <div className="h-full w-full bg-indigo-700 rounded-r-full" style={{ width: getProgressWidth(), transition: 'width 0.3s ease' }}></div>
       </div>
-      <div className="fixed flex justify-center items-center w-screen h-screen mt-10">
+      <div className="fixed flex justify-center items-center w-screen h-screen mt-12">
         {letters.map((letter, index) => (
           <input
             key={index}
-            className={`w-20 h-20 rounded-lg mx-2 text-center ${
+            className={`w-28 h-28 rounded-lg mx-2 text-center ${
               letter === '' ? 'bg-indigo-700' : letter.toLowerCase() === correctLetters[index] ? 'bg-green-700' : 'bg-red-700'
-            } text-4xl font-mono font-medium uppercase text-white`}
+            } text-8xl font-mono font-medium uppercase text-white`}
             maxLength={1}
             value={letter}
             onChange={(e) => handleInputChange(index, e.target.value)}
@@ -90,7 +98,7 @@ const ActivityPage: React.FC = () => {
       </div>
       <div className="fixed bottom-16 left-1/2 transform -translate-x-1/2" onClick={handleButtonClick}>
         <button className="bg-indigo-700 hover:bg-indigo-800 rounded-full p-2 text-white">
-          <FaArrowRight className="w-12 h-12" />
+          <FaArrowRight className="w-20 h-20" />
         </button>
       </div>
     </div>
