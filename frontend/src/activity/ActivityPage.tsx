@@ -40,10 +40,10 @@ const ActivityPage: React.FC = () => {
   };
 
   const handleButtonClick = () => {
-    if (checkLetters()) {
-      // Se todas as respostas estiverem corretas, redireciona para /finish
+    const isFilled = letters.every((letter) => letter !== '');
+    if (isFilled) {
       navigate('/finish');
-    } 
+    }
   };
 
   useEffect(() => {
@@ -96,7 +96,7 @@ const ActivityPage: React.FC = () => {
           />
         ))}
       </div>
-      <div className="fixed bottom-16 left-1/2 transform -translate-x-1/2" onClick={handleButtonClick}>
+      <div className="fixed bottom-16 left-1/2 transform -translate-x-1/2 mt-10" onClick={handleButtonClick}>
         <button className="bg-indigo-700 hover:bg-indigo-800 rounded-full p-2 text-white">
           <FaArrowRight className="w-20 h-20" />
         </button>
