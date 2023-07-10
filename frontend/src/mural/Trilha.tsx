@@ -37,7 +37,7 @@ function Trilha() {
 
   return (
     <div className=''>
-      <h1 className="mt-2 mr-1 mb-4 ml-10 text-lg flex-grow font-semibold text-black-400">
+      <h1 className="mr-1 mb-4 ml-10 text-lg flex-grow font-semibold text-black-400">
         CRIAR NOVA TRILHA
       </h1>
       <div className="grid grid-cols-2 gap-4 mt-2 mx-2 bg-white border border-gray-300 rounded-[50px]">
