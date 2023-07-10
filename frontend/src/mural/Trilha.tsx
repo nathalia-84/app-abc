@@ -9,8 +9,9 @@ function Trilha() {
   const [isOpenTipo, setIsOpenTipo] = useState(false);
   const [isOpenModalidade, setIsOpenModalidade] = useState(false);
   const [selectedTipo, setSelectedTipo] = useState('palavras');
-  const [selectedModalidade, setSelectedModalidade] = useState('palavras');
+  const [selectedModalidade, setSelectedModalidade] = useState('aleatorio');
   const [isCalendarVisible, setIsCalendarVisible] = useState(false);
+  const [showWordItem, setShowWordItem] = useState(false);
 
   const toggleSelectTipo = () => {
     setIsOpenTipo(!isOpenTipo);
@@ -24,8 +25,10 @@ function Trilha() {
     setSelectedTipo(event.target.value);
   };
 
-  const handleModalidadeChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
-    setSelectedModalidade(event.target.value);
+  const handleModalidadeChange = (event: { target: { value: any; }; }) => {
+    const value = event.target.value;
+    setSelectedModalidade(value);
+    setShowWordItem(value === 'customizado');
   };
 
   const toggleCalendar = () => {
@@ -54,7 +57,6 @@ function Trilha() {
           <AddTrilha />
         </div>
 
-       
         <div className="mt-2 mr-4 ml-4 mb-8">
           <h4 className=" text-3x1 font-semibold text-gray-400">ESCOLHA O TIPO DA TRILHA</h4>
           <div className="relative flex items-center">
@@ -70,26 +72,22 @@ function Trilha() {
                   <option value="outra-opcao">Letras</option>
                   <option value="mais-uma-opcao">Frases</option>
                 </select>
-              </div>
-            
-          </div>
+              </div>        
+        </div>
         </div>
         <div className="mt-2 mr-4 ml-4 mb-8">
           <h4 className=" text-3x1 font-semibold text-gray-400">ESCOLHA A MODALIDADE</h4>
           <div className="relative flex items-center">
-           
-            
-              <div className="absolute top-2 left-0 w-2/3 bg-white border border-gray-200 rounded-md shadow-md">
-                <select
-                  className="w-full p-2 border-none rounded-md focus:outline-none"
-                  value={selectedTipo}
-                  onChange={handleTipoChange}
-                >
-                  <option value="customizado">Customizado pelo Professor</option>
-                  <option value="aleatorio">Gerado Aleatoriamente</option>
-                </select>
-              </div>
-            
+            <div className="absolute top-2 left-0 w-2/3 bg-white border border-gray-200 rounded-md shadow-md">
+              <select
+                className="w-full p-2 border-none rounded-md focus:outline-none"
+                value={selectedModalidade}
+                onChange={handleModalidadeChange}
+              >
+                <option value="customizado">Customizado pelo Professor</option>
+                <option value="aleatorio">Gerado Aleatoriamente</option>
+              </select>
+            </div>
           </div>
         </div>
         
@@ -104,7 +102,7 @@ function Trilha() {
         </div>
 
         <div className="mt-14">
-          <WordItem />
+        {showWordItem && <WordItem />}
         </div>
         
 
@@ -125,12 +123,9 @@ function Trilha() {
               Salvar
            </button>
         </div>
-
-
-
       </div>
     </div>
   );
 }
 
-export default Trilha
+export default Trilha;

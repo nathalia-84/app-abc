@@ -2,18 +2,34 @@ import { FiSearch, FiBell, FiClock } from 'react-icons/fi';
 
 function Mural() {
   return (
-    <div className="grid grid-cols-2 gap-4 bg-white text-lg rounded-[50px]">
-      <div className="mr-4 ml-6 mb-4 text-left">
-        <h4 className="text-3x2 font-semibold text-black mt-4 mb-4 text-left">
+    <div className="grid grid-cols-2 gap-2 bg-white text-lg rounded-[50px]">
+      <div className=" ml-6 mb-4 text-left">
+        <h4 className="text-xl font-semibold text-black  mb-4 text-left">
           Treinamento do Professor
         </h4>
-        <div className="bg-indigo-700 h-40 rounded-[30px]"></div>
+        <div className="bg-indigo-700 h-40 rounded-[30px] text-left relative"  style={{ width: '100%', height: '55%'}}>
+          <div className="flex items-center mt-4">
+            <img src="https://static.vecteezy.com/system/resources/previews/019/616/868/original/woman-reading-book-png.png" alt="Imagem" className="h-32 rounded-sm ml-4 mt-4" />
+            <div>
+              <h5 className="text-white font-semibold text-xl ml-4 mt-4">
+                Treinamento Professor
+              </h5>
+              <p className="text-white text-sm ml-4 mt-2">
+                A trilha de formação de professores inclui conteúdos teóricos e práticos sobre o uso da plataforma.
+              </p>
+              <a href="#" className="text-yellow-500 font-semibold text-sm absolute bottom-4 right-4">
+                Saiba mais
+              </a>
+              </div>
+              </div>
+        </div>
       </div>
-      <div className="grid grid-flow-row bg-white border text-lg border-gray-300 w-1/2 h-100 rounded-[30px] mt-8 mr-8 ml-20 mb-4 text-left">
+      
+      <div className="grid grid-flow-row bg-white border text-lg border-gray-300 h-100 rounded-[30px] mt-8 mr-8  mb-4 text-left" style={{ justifySelf: 'end',  width: '50%' }}>
         <h4 className="text-3x1 font-semibold text-black mt-4 mr-4 ml-6 mb-4 text-left">
           Atividades
         </h4>
-        <div className='flex mb-4'>
+        <div className='flex mb-4 '>
           <div className='flex ml-4'>
             <img src="https://as1.ftcdn.net/v2/jpg/00/46/37/34/1000_F_46373452_doSKTCg762J3fYtbvdhSQpWdID7ZhJMA.jpg" className='h-20 rounded-sm' />
           </div>
@@ -60,7 +76,8 @@ function Mural() {
         </div>
       </div>
       <div></div>
-      <div className="grid grid-flow-row bg-white border text-lg border-gray-300 w-1/2 h-100 rounded-[30px] mt-8 mr-8 ml-20 mb-4">
+      <div className="grid grid-flow-row bg-white border text-lg border-gray-300 h-100 rounded-[30px] mt-8 mr-8 ml-auto mb-4 text-left" style={{ justifySelf: 'end',  width: '50%' }}>
+
         <h4 className="text-3x1 font-semibold text-black mt-4 mr-4 ml-6 mb-4 text-left">
           Trilhas Agendadas
         </h4>
