@@ -37,11 +37,13 @@ function LoginPage() {
                 />
               </div>
               <div className="mb-4">
+              <Link to={"/mural"}>
                 <button
                   className="inline-block w-full py-4 px-8 leading-none text-white bg-indigo-700 hover:bg-indigo-600 font-semibold rounded shadow"
                 >
-                 <Link to={"/mural"}>Entrar</Link>
+                 Entrar
                 </button>
+                </Link>
               </div>
               <div className="mb-4">
                 <p>
