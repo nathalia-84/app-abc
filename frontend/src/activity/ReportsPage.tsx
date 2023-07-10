@@ -49,14 +49,14 @@ const ReportPage: React.FC = () => {
           </div>
         </div>
         <div className="p-4">
-          <BarChart width={600} height={300} data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="Palavras_Completadas" fill="#ffbb33" />
-          </BarChart>
+        <BarChart width={600} height={300} data={chartData}>
+  <CartesianGrid strokeDasharray="3 3" />
+  <XAxis dataKey="name" tick={{ fill: '#fff' }} />
+  <YAxis tick={{ fill: '#fff' }} />
+  <Tooltip />
+  <Legend wrapperStyle={{ color: '#fff' }} />
+  <Bar dataKey="Palavras_Completadas" fill="#ffbb33" />
+</BarChart>
         </div>
       </div>
       <div className="text-2xl mt-8">

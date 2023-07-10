@@ -5,15 +5,15 @@ function MainContent() {
     <div>
       <div className="flex bg-indigo-700">
         <div className="text-white m-10 w-1/2">
-          <h1 className="text-4xl font-bold mb-4">
+          <h1 className="text-4xl font-bold mr-5">
             Aprendendo a ler, escrever e transformar o mundo
           </h1>
-          <p className="mb-4 text-lg text-gray-200">
+          <p className="text-gray-200 mt-12 mb-12 text-2xl">
             O FreirEduc é um software educacional inovador que utiliza o método de Paulo Freire de alfabetização contextualizada potencializando o processo de ensino e aprendizagem. Projetado com um design simples e intuitivo, o software busca adaptar-se à realidade do aluno, celebrando a pluralidade cultural e especificidades das regiões brasileiras.
           </p>
           <Link
             to="/insertPin"
-            className="mt-4 px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-black text-lg rounded-lg font-medium"
+            className="px-6 py-6 bg-yellow-400 hover:bg-yellow-500 text-gray-700 rounded-lg text-2xl font-bold"
           >
             ACESSAR SALA VIRTUAL COM PIN
           </Link>

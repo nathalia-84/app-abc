@@ -31,7 +31,7 @@ function Navbar() {
               </div>
               <div>
             <ul className="flex space-x-4 text-white mr-4 ml-4">
-              <li><Link to="/home" className="hover:underline">Sair</Link></li>              
+              <li><Link to="/" className="hover:underline">Sair</Link></li>              
            </ul>
           </div>
           </div>        
