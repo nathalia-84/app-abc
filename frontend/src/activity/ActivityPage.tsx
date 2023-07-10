@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { FaClock, FaArrowRight, FaSmile, FaSadTear } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
+interface CustomWindow extends Window {
+  speechSynthesis: SpeechSynthesis;
+}
+
 const ActivityPage: React.FC = () => {
   const navigate = useNavigate();
   const [seconds, setSeconds] = useState(90); // 90 seconds
@@ -9,6 +13,8 @@ const ActivityPage: React.FC = () => {
   const correctLetters = ['c', 'a', 's', 'a'];
   const [showHappyFace, setShowHappyFace] = useState(false);
   const [showSadFace, setShowSadFace] = useState(false);
+
+  const { speechSynthesis }: CustomWindow = window;
 
   useEffect(() => {
     if (seconds > 0) {
@@ -22,6 +28,17 @@ const ActivityPage: React.FC = () => {
       navigate('/timeisup');
     }
   }, [seconds, navigate]);
+
+  useEffect(() => {
+    // Função para falar a palavra "casa"
+    const speakWord = () => {
+      const utterance = new SpeechSynthesisUtterance('casa');
+      speechSynthesis.speak(utterance);
+    };
+
+    // Chame a função de falar a palavra "casa" quando o componente for montado
+    speakWord();
+  }, []);
 
   const getProgressWidth = () => {
     const percentage = (seconds / 90) * 100; // Calculate percentage based on 90 seconds
