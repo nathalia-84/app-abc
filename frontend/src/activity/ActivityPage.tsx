@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { FaClock, FaArrowRight, FaSmile, FaSadTear } from 'react-icons/fa';
+import { FaClock, FaArrowRight } from 'react-icons/fa';
+import { HiThumbUp, HiThumbDown } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
 
 interface CustomWindow extends Window {
@@ -90,7 +91,7 @@ const ActivityPage: React.FC = () => {
       />
       {showImage && (
         <img
-          className="absolute top-1 left-2 w-40 h-40 object-cover mt-60 ml-20"
+          className="absolute top-1 left-2 w-80 h-80 object-cover mt-60 ml-20"
           src="src/activity/fala.png"
           alt="background"
           
@@ -102,9 +103,9 @@ const ActivityPage: React.FC = () => {
           {(showHappyFace || showSadFace) && (
             <div className="absolute top-2 left-2">
               {showHappyFace ? (
-                <FaSmile className="h-20 w-20 text-white" />
+                <HiThumbUp className="h-20 w-20 text-green-600" />
               ) : (
-                <FaSadTear className="h-20 w-20 text-red-500" />
+                <HiThumbDown className="h-20 w-20 text-red-500" />
               )}
             </div>
           )}
