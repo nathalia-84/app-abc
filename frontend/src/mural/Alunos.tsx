@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 function Alunos() {
   return (
     <div className="font-semibold text-black">
-      <h1>ALUNOS</h1>
+      <h1 className='text-3xl font-semibold mb-6'>ALUNOS</h1>
       <div
         className="grid grid-flow-col gap-4"
         style={{ display: 'flex', flexWrap: 'wrap' }}

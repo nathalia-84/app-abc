@@ -7,7 +7,7 @@ function Atividades() {
       <table style={{ borderCollapse: 'collapse', width: '50%', textAlign: 'left',margin: '0 auto' }}>
         <thead>
           <tr>
-            <th className="text-lg"> 
+            <th className="text-3xl font-semibold "> 
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             Atividades
                 <div>
