@@ -13,6 +13,7 @@ const ActivityPage: React.FC = () => {
   const correctLetters = ['c', 'a', 's', 'a'];
   const [showHappyFace, setShowHappyFace] = useState(false);
   const [showSadFace, setShowSadFace] = useState(false);
+  const [showImage, setShowImage] = useState(true);
 
   const { speechSynthesis }: CustomWindow = window;
 
@@ -38,6 +39,14 @@ const ActivityPage: React.FC = () => {
 
     // Chame a função de falar a palavra "casa" quando o componente for montado
     speakWord();
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowImage(false);
+    }, 5000); // Mostrar a imagem por 5 segundos
+
+    return () => clearTimeout(timer);
   }, []);
 
   const getProgressWidth = () => {
@@ -79,6 +88,14 @@ const ActivityPage: React.FC = () => {
         src="src/activity/bg-farm.jpg"
         alt="background"
       />
+      {showImage && (
+        <img
+          className="absolute top-1 left-2 w-40 h-40 object-cover mt-60 ml-20"
+          src="src/activity/fala.png"
+          alt="background"
+          
+        />
+      )}
       <div className="flex items-center fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <div className="w-72 h-72 bg-indigo-700 rounded-lg flex items-center justify-center">
           <img className="w-72" src="src/activity/house.png" alt="background" />
