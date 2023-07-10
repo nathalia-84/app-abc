@@ -7,11 +7,11 @@ interface CustomWindow extends Window {
   speechSynthesis: SpeechSynthesis;
 }
 
-const ActivityPage: React.FC = () => {
+const ActivityPage3: React.FC = () => {
   const navigate = useNavigate();
   const [seconds, setSeconds] = useState(90); // 90 seconds
-  const [letters, setLetters] = useState(['', '', '', '']);
-  const correctLetters = ['c', 'a', 's', 'a'];
+  const [letters, setLetters] = useState(['', '', '']);
+  const correctLetters = ['s', 'o', 'l'];
   const [showHappyFace, setShowHappyFace] = useState(false);
   const [showSadFace, setShowSadFace] = useState(false);
   const [showImage, setShowImage] = useState(true);
@@ -32,13 +32,13 @@ const ActivityPage: React.FC = () => {
   }, [seconds, navigate]);
 
   useEffect(() => {
-    // Função para falar a palavra "casa"
+    // Função para falar a palavra "sol"
     const speakWord = () => {
-      const utterance = new SpeechSynthesisUtterance('casa');
+      const utterance = new SpeechSynthesisUtterance('sol');
       speechSynthesis.speak(utterance);
     };
 
-    // Chame a função de falar a palavra "casa" quando o componente for montado
+    // Chame a função de falar a palavra "sol" quando o componente for montado
     speakWord();
   }, []);
 
@@ -69,7 +69,7 @@ const ActivityPage: React.FC = () => {
   const handleButtonClick = () => {
     const isFilled = letters.every((letter) => letter !== '');
     if (isFilled) {
-      navigate('/activity2');
+      navigate('/finish');
     }
   };
 
@@ -99,7 +99,7 @@ const ActivityPage: React.FC = () => {
       )}
       <div className="flex items-center fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <div className="w-72 h-72 bg-indigo-700 rounded-lg flex items-center justify-center">
-          <img className="w-72" src="src/activity/house.png" alt="background" />
+          <img className="w-48" src="src/activity/sun.png" alt="background" />
           {(showHappyFace || showSadFace) && (
             <div className="absolute top-2 left-2">
               {showHappyFace ? (
@@ -140,4 +140,4 @@ const ActivityPage: React.FC = () => {
   );
 };
 
-export default ActivityPage;
+export default ActivityPage3;
